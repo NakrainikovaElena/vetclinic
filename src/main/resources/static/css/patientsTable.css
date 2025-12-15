@@ -1,0 +1,44 @@
+#patientsBlock {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #6c757d;
+}
+
+#patientsBlock h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#patientsBlock table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 18px;
+    color: white;
+}
+
+#patientsBlock th {
+    background-color: #495057;
+    padding: 12px;
+    text-align: center;
+    border-bottom: 2px solid white;
+}
+
+#patientsBlock td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+#patientsBlock tr:nth-child(even) {
+    background-color: #5a6268;
+}
+
+#patientsBlock tr:hover {
+    background-color: #343a40;
+    transition: 0.3s;
+}

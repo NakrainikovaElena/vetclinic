@@ -1,0 +1,53 @@
+#addPatientBlock {
+    width: 90%;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    background-color: #6c757d;
+    color: white;
+    box-sizing: border-box;
+}
+
+#addPatientBlock form div {
+    margin-bottom: 15px;
+}
+
+#addPatientBlock label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#addPatientBlock input,
+#addPatientBlock textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#addPatientBlock input:focus,
+#addPatientBlock textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px #495057;
+}
+
+#addPatientBlock button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #495057;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#addPatientBlock button:hover {
+    background-color: #343a40;
+}

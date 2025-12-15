@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кабинет клиента</title>
+    <link rel="stylesheet" th:href="@{/css/mainPage.css}">
+    <link rel="stylesheet" th:href="@{/css/petsTable.css}">
+    <link rel="stylesheet" th:href="@{/css/formaAddPet.css}">
+    <link rel="stylesheet" th:href="@{/css/formaAddOwner.css}">
+</head>
+<body>
+<header>
+    <h1>Кабинет клиента</h1>
+    <nav>
+        <a href="#" id="tabPets">Мои питомцы</a>
+        <a href="#" id="tabAddPet">Добавить питомца</a>
+        <a href="#" id="tabAddOwner">Добавить хозяина</a>
+        <a href="#" id="tabLogout" onclick="document.getElementById('logoutForm').submit(); return false">Выход</a>
+    </nav>
+    <form id="logoutForm" th:action="@{/logout}" method="post" style="display:none;">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+    </form>
+</header>
+
+<div class="content">
+    <!-- Таблица питомцев -->
+    <div id="petsBlock" style="display:none;">
+        <table border="1">
+            <thead>
+            <tr>
+                <th>Имя питомца</th>
+                <th>Вид питомца</th>
+                <th>Врач</th>
+                <th>Специальность</th>
+                <th>Телефон врача</th>
+            </tr>
+            </thead>
+            <tbody id="petsTable"></tbody>
+        </table>
+    </div>
+
+    <!-- Форма добавления нового питомца -->
+    <div id="addPetBlock" style="display:none;">
+        <form id="addPetForm">
+            <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
+            <table>
+                <tr>
+                    <td>Имя питомца:</td>
+                    <td><input type="text" id="petName" required></td>
+                </tr>
+                <tr>
+                    <td>Вид питомца:</td>
+                    <td><input type="text" id="species" required></td>
+                </tr>
+                <tr>
+                    <td>Врач:</td>
+                    <td>
+                        <select id="specialistSelect" required>
+                            <option value="">-- Выберите врача --</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center;">
+                        <button type="submit">Добавить питомца</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <!-- Форма добавления нового хозяина -->
+    <div id="addOwnerBlock" style="display:none;">
+        <form id="addOwnerForm">
+            <table>
+                <tr>
+                    <td>Выберите питомца:</td>
+                    <td>
+                        <select id="petSelect" required>
+                            <option value="">-- Выберите питомца --</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Логин нового хозяина:</td>
+                    <td><input type="text" id="ownerLogin" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center;">
+                        <button type="submit">Добавить хозяина</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div id="ownerMessage" style="color:red; margin-top:10px;"></div>
+    </div>
+</div>
+
+<script src="/js/client.js" defer></script>
+
+</body>
+</html>
